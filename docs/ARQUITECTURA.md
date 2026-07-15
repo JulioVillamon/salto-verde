@@ -133,6 +133,4 @@ Ver `index.html` de esta carpeta como referencia completa.
 
 ## Integración en juliovillamon.com
 
-Salto Verde también está disponible como easter egg en el sitio personal del autor. Es la misma mecánica y presentación visual (efecto CRT, HUD pixel y controles para teclado y táctil), embebida en la sección de software del portfolio.
-
-Jugar en línea: [juliovillamon.com/juego](https://www.juliovillamon.com/juego)
+También publico Salto Verde en mi sitio personal, [juliovillamon.com/juego](https://www.juliovillamon.com/juego), como easter egg. Es la misma mecánica y la misma presentación visual (efecto CRT, HUD pixel y controles para teclado y táctil).
