@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salto Verde</title>
+  <meta name="description" content="Salto Verde: salta bloques con el héroe verde en pixel art.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <main class="demo-page">
+    <header class="demo-header">
+      <h1>Salto Verde</h1>
+      <p>Salta los bloques. Software libre. Obstáculos incluidos.</p>
+    </header>
+
+    <div class="game-view game-chassis">
+      <div class="game-screen">
+        <div class="game-screen__stage">
+          <canvas
+            class="game-canvas image-render-pixelated"
+            width="640"
+            height="200"
+            tabindex="0"
+            aria-label="Salto Verde"
+          ></canvas>
+          <span class="game-screen__crt-bar" aria-hidden="true"></span>
+          <div class="game-screen__hud" aria-hidden="true">
+            <span class="game-screen__sound game-pixel-label"></span>
+            <span class="game-screen__pts game-pixel-label"></span>
+          </div>
+          <div class="game-screen__overlay is-hidden" aria-live="polite">
+            <p class="game-screen__status game-pixel-label"></p>
+            <p class="game-screen__score game-pixel-label is-hidden"></p>
+            <p class="game-screen__hint game-pixel-label"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-control-panel">
+        <div class="game-control-panel__bezel">
+          <span class="game-control-panel__label">Panel de control</span>
+        </div>
+        <div class="game-control-panel__body">
+          <div class="game-control-panel__meta">
+            <p class="game-hud">Espacio / toque para empezar y saltar · P pausa · R reiniciar</p>
+            <p class="game-tagline">Versión demo del juego integrado en juliovillamon.com</p>
+            <p class="game-record">Récord: 0</p>
+          </div>
+          <div class="game-control-panel__actions">
+            <button type="button" class="game-pause game-btn">Pausar</button>
+            <button type="button" class="game-restart game-btn">Reiniciar</button>
+            <button type="button" class="game-mute game-btn" aria-pressed="false">Silenciar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="demo-footer">
+      <a href="https://www.juliovillamon.com/juego" rel="noopener noreferrer">Salto Verde en juliovillamon.com</a>
+    </footer>
+  </main>
+
+  <script src="js/sprites.js"></script>
+  <script src="js/game-runner.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var shell = document.querySelector('.game-view');
+      var statusEl = document.querySelector('.game-screen__status');
+      var overlay = document.querySelector('.game-screen__overlay');
+
+      if (!shell || !window.SaltoVerde) {
+        return;
+      }
+
+      if (overlay && statusEl) {
+        overlay.classList.remove('is-hidden');
+        statusEl.textContent = 'Cargando sprites…';
+      }
+
+      SaltoVerde.mount(shell).catch(function (err) {
+        if (statusEl) {
+          statusEl.textContent = 'Error al cargar el juego';
+        }
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+</html>
