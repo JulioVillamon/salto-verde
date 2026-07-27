@@ -33,7 +33,7 @@ Sprites Kenney «Pixel Platformer» (CC0) en `assets/`:
 - Personaje 24×24: `player-run-a`, `player-run-b`, `player-jump`
 - Obstáculo: `obstacle` (recorte 18×18, apilable hasta 3)
 - Suelo: `ground-top` (18×18) + `ground-fill` (18×18 repetido)
-- Decoración: `deco-tree`, `deco-cactus`, `deco-sign` (carteles cada 50 pts)
+- Decoración: `deco-tree`, `deco-cactus`, `deco-sign` (carteles de dirección; spawn cada 50 pts)
 - Fondo: cielo degradado, montañas procedimentales en 3 capas, nubes vectoriales
 
 Canvas interno **640×200 px**; la resolución en pantalla la ajusta `syncCanvasResolution()` para que el buffer coincida con el tamaño CSS (el cielo crece hacia arriba; suelo y personaje permanecen anclados abajo).
@@ -65,7 +65,7 @@ La preferencia se guarda en `localStorage` (`saltoVerdeMuted`).
 ### Layout
 
 - Canvas interno **640×200 px**; en pantalla la altura del área de juego es **el doble** que la del panel de control (`SCREEN_PANEL_HEIGHT_RATIO = 2`).
-- Carteles de puntuación: uno centrado al arrancar y otro cada **50 puntos** (50, 100, 150…).
+- **Carteles de dirección** (flecha hacia la derecha): uno centrado al arrancar y otro cada **50 puntos** de puntuación (umbrales 50, 100, 150…). Indican el camino a seguir; la puntuación se muestra en el HUD.
 - Torres de **3 bloques** posibles desde **100 puntos** (`STACK3_MIN_SCORE`).
 
 ### Interfaz pixel (`css/game.css`)

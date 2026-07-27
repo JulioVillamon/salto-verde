@@ -45,7 +45,7 @@
   var OBSTACLE_DEST_X = 3;
   var OBSTACLE_GROUND_SNAP = 5;
   var OBSTACLE_STACK_OVERLAP = 4;
-  var SIGN_INTERVAL = 50;          /* Carteles de puntuación cada N puntos */
+  var SIGN_INTERVAL = 50;          /* Carteles de dirección cada N puntos de puntuación */
   var STACK3_MIN_SCORE = 100;      /* Torres de 3 bloques desde este score */
   var BLOCK_SIZE = 18;
   /* Densidad del decorado (árboles/cactus); los carteles no cuentan en sceneryPlantRightmost */

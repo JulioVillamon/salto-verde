@@ -38,7 +38,7 @@
     groundFill: 'ground-fill.png',    /* Relleno del suelo (se repite en vertical) */
     decoTree: 'deco-tree.png',        /* Decoración: árbol */
     decoCactus: 'deco-cactus.png',    /* Decoración: cactus */
-    decoSign: 'deco-sign.png',        /* Decoración: cartel de puntuación */
+    decoSign: 'deco-sign.png',        /* Decoración: cartel de dirección (flecha) */
   };
 
   /* --- Carga asíncrona de imágenes --- */
